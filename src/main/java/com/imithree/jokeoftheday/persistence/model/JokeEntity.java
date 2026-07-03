@@ -16,11 +16,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "jokes")
-public class Joke {
+public class JokeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String joke;
+
+    public JokeEntity(String joke) {
+        this.joke = joke;
+    }
 }

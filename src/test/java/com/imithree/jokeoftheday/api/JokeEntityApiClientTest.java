@@ -7,8 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.imithree.jokeoftheday.api.model.JokeApiDto;
+
 @SpringBootTest
-class JokeApiClientTest {
+class JokeEntityApiClientTest {
 
     @Autowired
     private JokeApiClient jokeApiClient;
@@ -20,8 +22,10 @@ class JokeApiClientTest {
 
     @Test
     void test_get_random_joke() {
-        String result = jokeApiClient.getJoke();
+        JokeApiDto result = jokeApiClient.getJoke();
         assertNotNull(result);
-        assertNotEquals("", result);
+        assertNotNull(null, result.getJoke());
+        assertNotEquals("", result.getJoke());
+        System.out.println(result.getJoke());
     }
 }
